@@ -1,0 +1,6 @@
+tests:
+  # section.subsection
+  testing.ztest:
+    build_only: false
+    platform_allow: stm32g473_acme_cpu_c201
+    tags: testing

@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2021 Acme CPU
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+&mcu_gpios {
+
+      dio3_int: gpioa-0 {
+            gpios = <&gpioa 0 (GPIO_INPUT | GPIO_INT_EDGE_FALLING)>;
+            label = "UI INT";
+      };
+
+      sensor_int: gpioc-3 {
+            gpios = <&gpioc 3 (GPIO_INPUT | GPIO_INT_EDGE_FALLING)>;
+            label = "SENSOR INT";
+      };
+
+      tamp_det: gpioc-13 {
+            gpios = <&gpioc 13 (GPIO_INPUT | GPIO_INT_EDGE_RISING)>;
+            label = "TAMP DET";
+      };
+
+      periph_reset: gpioa-8 {
+            gpios = <&gpioa 8 (GPIO_OUTPUT_ACTIVE)>;
+            label = "PERIPH RST";
+      };
+};

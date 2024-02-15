@@ -1,0 +1,26 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+description: BQ25611D I2C Controlled 1-cell Buck Battery Charger
+
+include: i2c-device.yaml
+
+compatible: "ti,bq25611d"
+
+properties:
+
+  interrupt-gpios:
+    required: true
+    type: phandle-array
+
+  enable-gpios:
+    required: true
+    type: phandle-array
+
+  pwms:
+    required: false
+    type: phandle-array
+
+  pwm-names:
+    required: false
+    type: string-array

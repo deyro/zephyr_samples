@@ -1,0 +1,13 @@
+
+
+/{ c201: acpu-c201-board {
+
+
+   };
+ };
+
+#include <gpio_dt_defines.dtsi>
+
+#include <acpu_c201_myunittest.dtsi>
+#include <acpu_c201_usart1.dtsi>
+

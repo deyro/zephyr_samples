@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <stm32g473re_disco_usart3.dtsi>
+
+#include <stm32g474re_disco_i2c1_bus.dtsi>
+#include <stm32g473_disco_i2c1_bus_seg0.dtsi>
+
+/*#include <acme_cpu_c201_i2c3_bus.dtsi>
+#include <acme_cpu_c201_i2c3_bus_seg0.dtsi>*/

@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2020 Volodymyr Sirous
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+ 
+ #include <dt-bindings/pinctrl/stm32-pinctrl.h>
+
+&pinctrl {
+
+  tim17_ch1: gpiob_9 {
+    pinmux = <STM32_PINMUX('B', 9, (STM32_PINMUX_ALT_FUNC_1 | STM32_PUSHPULL_PULLUP | STM32_OSPEEDR_HIGH_SPEED))>;
+  };
+
+};
+
+&timers17 {
+  status = "okay";
+  pwm17: pwm {
+    status = "okay";
+    pinctrl-0 = <&tim17_ch1>;
+    st,prescaler = <2>;
+    #pwm-cells = <3>;
+  };
+};

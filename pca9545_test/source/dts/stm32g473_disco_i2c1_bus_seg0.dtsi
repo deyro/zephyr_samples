@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&i2c3_seg0 {
+  bma253@18 {
+    compatible = "bosch,bma280";
+    reg = <0x18>;
+    label = "TILT_SENSOR";
+    int1-gpios = <&gpioa 5 GPIO_ACTIVE_LOW>;
+  };
+  
+  led_drv: pca9632@62 {
+    compatible = "nxp,pca9632";
+    reg = <0x62>;
+    label = "UI_LEDS";
+    #pwm-cells = <1>;
+  };
+  
+};

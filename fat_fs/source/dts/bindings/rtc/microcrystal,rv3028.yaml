@@ -1,0 +1,15 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    Micro Crystal Extreme Low Power RTC Module
+    https://www.microcrystal.com/fileadmin/Media/Products/RTC/Datasheet/RV-3028-C7.pdf
+
+compatible: "microcrystal,rv3028"
+
+include: i2c-device.yaml
+
+properties:
+    int-gpios:
+      type: phandle-array
+      required: false

@@ -1,0 +1,5 @@
+# Copyright (c) 2020 Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+rsource "led-pwm/Kconfig"
+rsource "pca9545/Kconfig"

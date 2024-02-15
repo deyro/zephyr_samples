@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "acme_cpu_c201_usart1.dtsi"
+/*#include "stm32g474re_disco_usart3.dtsi"*/
+#include "stm32g474re_disco_timers20.dtsi"
+/*#include "acme_cpu_c201_timers3.dtsi"*/
+

@@ -1,0 +1,19 @@
+# TIM IC configuration options
+
+# Copyright (c) 2021 Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig TIM_IC
+	bool "Timer Input Capture Drivers"
+	help
+	  Enable config options for TIM IC drivers.
+
+if TIM_IC
+
+module = TIM_IC
+module-str = tim_ic
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.stm32"
+
+endif # TIM_IC

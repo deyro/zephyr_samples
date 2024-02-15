@@ -1,0 +1,21 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+description: PCAL9632 4-bit Fm+ I2C Controlled low power LED driver
+
+include: i2c-device.yaml
+
+compatible: "nxp,pca9632"
+
+properties:
+
+  label:
+    required: true
+
+  "#pwm-cells":
+    type: int
+    required: true
+    const: 1
+
+pwm-cells:
+  - channel

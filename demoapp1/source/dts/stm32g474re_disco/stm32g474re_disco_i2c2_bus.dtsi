@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+&pinctrl {
+  i2c2_scl: gpioa_9 {
+    pinmux = <STM32_PINMUX('A', 9, AF4)>;
+  };
+
+  i2c2_sda: gpioa_10 {
+    pinmux = <STM32_PINMUX('A', 10, AF4)>;
+  };
+};
+
+&i2c2 {
+  status = "okay";
+  clock-frequency = <I2C_BITRATE_FAST>;
+  pinctrl-0 = <&i2c2_scl &i2c2_sda>;
+};

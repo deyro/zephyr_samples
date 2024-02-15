@@ -1,0 +1,19 @@
+
+menuconfig MYUNITTEST
+	bool "MYUNITTEST Driver"
+	help
+	  Enable driver for MYUNITTEST
+
+if MYUNITTEST
+
+module = MYUNITTEST
+module-str = myunittest
+source "subsys/logging/Kconfig.template.log_config"
+
+config MYUNITTEST_INIT_PRIORITY
+	int "Init Priority"
+	default APPLICATION_INIT_PRIORITY
+	help
+	    Device driver initialization priority.
+
+endif # MYUNITTEST

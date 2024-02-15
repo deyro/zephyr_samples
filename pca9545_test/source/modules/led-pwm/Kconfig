@@ -1,0 +1,31 @@
+# Copyright (c) 2018 Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+# Top-level configuration file for LED drivers.
+
+menuconfig ACME_CPU_C201_LED
+	bool "LED drivers"
+	help
+	  Include LED drivers in the system configuration.
+
+if ACME_CPU_C201_LED
+
+#module = ACME_CPU_C201_LED
+#module-str = acme_cpu_c201_led
+#source "subsys/logging/Kconfig.template.log_config"
+
+config LED_INIT_PRIORITY
+	int "LED initialization priority"
+	default 90
+	help
+	  System initialization priority for LED drivers.
+
+config LED_SHELL
+	bool "LED shell"
+	depends on SHELL
+	help
+	  Enable LED shell for testing.
+
+rsource "Kconfig.pca9632"
+
+endif # ACME_CPU_C201_LED

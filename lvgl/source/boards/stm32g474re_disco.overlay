@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&spi1 {
+        status = "okay";
+        /*cs-gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;*/
+        clock-frequency = <400000>;
+};

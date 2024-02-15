@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2020 Volodymyr Sirous
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+/{ c201: acpu-c201-board {
+
+   };
+ };
+
+#include <gpio_dt_defines.dtsi>
+
+#include <stm32g474re_disco_usart3.dtsi>
+
+#include <acpu_c201_timers2.dtsi>
+#include <acpu_c201_timers20.dtsi>
+#include <acpu_c201_blower.dtsi>
+#include <stm32g473re_disco_joystick.dtsi>

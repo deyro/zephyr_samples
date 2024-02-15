@@ -1,0 +1,9 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "stm32g474re_disco_usart3.dtsi"
+#include "stm32g474re_disco_dac1.dtsi"
+

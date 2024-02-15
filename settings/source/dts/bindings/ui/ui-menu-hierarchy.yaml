@@ -1,0 +1,15 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+include: "base.yaml"
+
+compatible: "menu-entry"
+
+description: Defines entry point of the menu
+
+properties:
+  label:
+    required: true
+  menu:
+    type: phandle
+    required: true

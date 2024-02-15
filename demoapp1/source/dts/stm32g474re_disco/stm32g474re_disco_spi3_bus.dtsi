@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&pinctrl {
+  spi3_sck: gpiob_3 {
+    pinmux = <STM32_PINMUX('B', 3, AF6)>;
+  };
+
+  spi3_mosi: gpioc_12 {
+    pinmux = <STM32_PINMUX('C', 12, AF6)>;
+  };
+
+  spi3_miso: gpioc_11 {
+    pinmux = <STM32_PINMUX('C', 11, AF6)>;
+  };
+
+  spi3_microsd_nss: gpiod_2 {
+    pinmux = <STM32_PINMUX('D', 2, AF6)>;
+  };
+};
+
+&spi3 {
+    status = "okay";
+    pinctrl-0 = <&spi3_sck &spi3_mosi &spi3_miso &spi3_microsd_nss>;
+};

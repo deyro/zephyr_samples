@@ -1,0 +1,3 @@
+
+rsource "bsp_fan/Kconfig"
+rsource "tim_ic/Kconfig"

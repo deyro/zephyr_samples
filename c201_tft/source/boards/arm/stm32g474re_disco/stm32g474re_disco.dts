@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2019 STMicroelectronics.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <st/g4/stm32g473Xe.dtsi>
+#include <st/g4/stm32g474r(b-c-e)tx-pinctrl.dtsi>
+#include <stm32g474re_disco/stm32g474re_disco.dtsi>
+
+/ {
+	model = "STMicroelectronics STM32G474RE-DISCOVERY board";
+	compatible = "st,stm32g474re-disco";
+
+	chosen {
+		zephyr,console = &usart1;
+		zephyr,shell-uart = &usart1;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+	
+	pwmleds {
+		compatible = "pwm-leds";
+		pwm_user: pwm_user {
+			/*pwms = <&pwm20 1 1000000000 PWM_POLARITY_NORMAL>;*/
+			pwms = <&pwm3 1 1000000000 PWM_POLARITY_NORMAL>;
+		};
+	};
+	
+	aliases {
+		pwm0 = &pwm_user;
+		i2c0 = &i2c1;
+	};
+};
+
+&flash0 {
+	/*
+	 * For more information, see:
+	 * http://docs.zephyrproject.org/latest/guides/dts/index.html#flash-partitions
+	 */
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/* Set 2Kb of storage at the end of the 128Kb of flash */
+		storage_partition: partition@1f800 {
+			label = "storage";
+			reg = <0x0001f800 0x00000800>;
+		};
+	};
+};
+

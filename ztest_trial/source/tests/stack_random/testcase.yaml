@@ -1,0 +1,7 @@
+tests:
+  kernel.memory_protection.stack_random:
+    arch_exclude: posix
+    build_only: false
+    platform_allow: stm32g473_acme_cpu_c201
+    tags: memory_protection
+

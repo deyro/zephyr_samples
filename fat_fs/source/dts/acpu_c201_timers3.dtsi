@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2021 Acme CPU
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+&timers3 {
+  status = "okay";
+  tim_3_pwm: pwm {
+    status = "okay";
+    pinctrl-0 = <&tim3_ch1_pc6 &tim3_ch2_pc7>;
+    st,prescaler = <0>;
+    #pwm-cells = <3>;
+  };
+};

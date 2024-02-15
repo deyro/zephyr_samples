@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+ 
+&pinctrl {
+	usart3_tx: gpioc_10 {
+		pinmux = <STM32_PINMUX('C', 10, AF7)>;
+	};
+	
+	usart3_rx: gpioc_11 {
+		pinmux = <STM32_PINMUX('C', 11, AF7)>;
+	};
+};
+ 
+
+&usart3 {
+    status = "okay";
+    current-speed = <115200>;
+    pinctrl-0 = <&usart3_tx &usart3_rx>;
+};

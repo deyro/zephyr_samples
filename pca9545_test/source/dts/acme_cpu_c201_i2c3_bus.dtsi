@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2020 Volodymyr Sirous
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+&pinctrl {
+  i2c3_scl: gpioc_8 {
+    pinmux = <STM32_PINMUX('C', 8, (STM32_PINMUX_ALT_FUNC_8 | STM32_OTYPER_OPEN_DRAIN | STM32_OSPEEDR_HIGH_SPEED))>;
+  };
+
+  i2c3_sda: gpioc_9 {
+    pinmux = <STM32_PINMUX('C', 9, (STM32_PINMUX_ALT_FUNC_8 | STM32_OTYPER_OPEN_DRAIN | STM32_OSPEEDR_HIGH_SPEED))>;
+  };
+};
+
+&i2c3 {
+  status = "okay";
+  clock-frequency = <I2C_BITRATE_FAST>;
+  pinctrl-0 = <&i2c3_scl &i2c3_sda>;
+/*
+  compatible = "st,stm32-i2c-dma-v2";
+  dmas = <&dma1 0 0 0x0 0x0>,
+	 <&dma1 0 0 0x0 0x0>;
+  dma-names = "tx","rx";
+  dma-label-tx = "DMA_TX_I2C_3";
+  dma-label-rx = "DMA_RX_I2C_3";
+*/
+
+  i2c_mux: pca9545a@70 {
+    compatible = "ti,pca9545a";
+    reg = <0x70>;
+    channel-number = <4>;
+    label = "I2C_BUS_SWITCH";
+    interrupts = <9 16>;
+    reset-gpios = <&gpioa 8 GPIO_ACTIVE_LOW>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+/*    #channel-cells = <1>;*/
+  
+    i2c3_seg0: i2c-mux-ch@0 {
+      compatible = "i2c-bus-switch";
+      #address-cells = <1>;
+      #size-cells = <0>;
+      reg = <0>;
+      label = "I2C3_SEG_0";
+    };
+
+    i2c3_seg1: i2c-mux-ch@1 {
+      compatible = "i2c-bus-switch";
+      #address-cells = <1>;
+      #size-cells = <0>;
+      reg = <1>;
+      label = "I2C3_SEG_1";
+    };
+  
+    i2c3_seg2: i2c-mux-ch@2 {
+      compatible = "i2c-bus-switch";
+      #address-cells = <1>;
+      #size-cells = <0>;
+      reg = <2>;
+      label = "I2C3_SEG_2";
+    };
+
+    i2c3_seg3: i2c-mux-ch@3 {
+      compatible = "i2c-bus-switch";
+      #address-cells = <1>;
+      #size-cells = <0>;
+      reg = <3>;
+      label = "I2C3_SEG_3";
+    };
+
+  };
+
+};

@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "stm32g474re_disco_usart3.dtsi"
+#include "stm32g474re_disco_leds.dtsi"
+#include "stm32g474re_disco_joystick.dtsi"
+#include "stm32g474re_disco_spi1_bus.dtsi"
+#include "stm32g474re_disco_spi3_bus.dtsi"
+#include "stm32g474re_disco_timers4.dtsi"
+#include "stm32g474re_disco_i2c1_bus.dtsi"
+
+/*#include "stm32g474re_disco_timers17.dtsi"*/
+/*#include "stm32g474re_disco_timers20.dtsi"*/
+

@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/pinctrl/stm32-pinctrl.h>
+#include <st/g4/stm32g473r(b-c-e)tx-pinctrl.dtsi>
+
+&adc1 {
+  status = "okay";
+};

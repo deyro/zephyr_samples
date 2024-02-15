@@ -1,0 +1,15 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    Texas Instruments USB Type-C SBU Multiplexer
+    https://www.ti.com/lit/ds/symlink/ts3usbca4.pdf
+
+compatible: "ti,ts3usbca4"
+
+include: i2c-device.yaml
+
+properties:
+    oe-gpios:
+      type: phandle-array
+      required: false

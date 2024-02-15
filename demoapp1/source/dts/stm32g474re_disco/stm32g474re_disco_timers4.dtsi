@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+ 
+ #include <dt-bindings/pinctrl/stm32-pinctrl.h>
+
+&pinctrl {
+
+  tim4_ch2: gpiob_7 {
+    pinmux = <STM32_PINMUX('B', 7, AF2)>;
+  };
+
+};
+
+&timers4 {
+  status = "okay";
+  pwm4: pwm {
+    status = "okay";
+    pinctrl-0 = <&tim4_ch2>;
+    st,prescaler = <1>;
+    #pwm-cells = <3>;
+  };
+};

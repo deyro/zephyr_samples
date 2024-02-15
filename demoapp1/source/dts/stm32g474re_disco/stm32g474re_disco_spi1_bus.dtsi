@@ -1,0 +1,65 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/pinctrl/stm32-pinctrl.h>
+
+&pinctrl {
+  spi1_sck: gpioa_5 {
+    pinmux = <STM32_PINMUX('A', 5, AF5)>;
+  };
+
+  spi1_mosi: gpiob_5 {
+    pinmux = <STM32_PINMUX('B', 5, AF5)>;
+  };
+
+  spi1_miso: gpioa_6 {
+    pinmux = <STM32_PINMUX('A', 6, AF5)>;
+  };
+
+  spi1_display_nss: gpioa_4 {
+    pinmux = <STM32_PINMUX('A', 4, AF5)>;
+  };
+};
+
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi1_sck &spi1_mosi &spi1_miso &spi1_display_nss>;
+
+    tft_display: st7789v@0 {
+		compatible = "sitronix,st7789v";
+		label = "DISPLAY";
+		spi-max-frequency = <20000000>;
+		reg = <0>;
+		cmd-data-gpios = <&gpioc 0 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpioc 1 GPIO_ACTIVE_LOW>;
+		height = <240>;
+		width = <320>;
+		x-offset = <0>;
+		y-offset = <0>;
+		
+		vcom = <0x1F>;
+		
+		gctrl = <0x35>;
+		vrhs = <0x12>;
+		vdvs = <0x20>;
+		
+		/* mdac = <0x60>;	 Landscape orientation 1 (ST7789V_MADCTL_MX | ST7789V_MADCTL_MV)*/
+		mdac = <0xA0>;	/* Landscape orientation 2 (ST7789V_MADCTL_MY | ST7789V_MADCTL_MV) */
+		
+		gamma = <0x01>;
+		colmod = <0x05>;
+		lcm = <0x2c>;
+		porch-param = [0c 0c 00 33 33];
+		cmd2en-param = [5a 69 02 01];
+		pwctrl1-param = [a4 a1];
+		
+		pvgam-param = [D0 08 11 08 0C 15 39 33 50 36 13 14 29 2D];
+		nvgam-param = [D0 08 10 08 06 06 39 44 51 0B 16 14 2F 31];
+		
+		ram-param = [00 F0];
+		rgb-param = [CD 08 14];
+    };
+};

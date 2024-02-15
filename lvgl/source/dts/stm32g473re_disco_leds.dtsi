@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+leds {
+	compatible = "gpio-leds";
+	green_led: led_0 {
+		gpios = <&gpiob 7 GPIO_ACTIVE_HIGH>;
+		label = "User LD2";
+	};
+};
+
+/*
+orange_led {
+	gpios = <&gpiob 1 GPIO_ACTIVE_HIGH>;
+	label = "LED_LEFT";
+};
+
+red_led {
+	gpios = <&gpiob 5 GPIO_ACTIVE_HIGH>;
+	label = "LED_UP";
+};
+
+blue_led {
+	gpios = <&gpioa 15 GPIO_ACTIVE_HIGH>;
+	label = "LED_DOWN";
+};
+*/

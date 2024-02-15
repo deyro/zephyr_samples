@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2021 Acme CPU
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+&adc1 {
+    status = "okay";
+    pinctrl-0 = <&adc1_in6_pc0 &adc1_in7_pc1 &adc1_in8_pc2>;
+};

@@ -1,0 +1,12 @@
+description: General representation
+
+compatible: "myunittest"
+
+properties:
+    ut-gpios:
+      type: phandle-array
+      required: true
+    label:
+      required: true
+      type: string
+      description: Human readable string describing the signal (used as device_get_binding() argument)

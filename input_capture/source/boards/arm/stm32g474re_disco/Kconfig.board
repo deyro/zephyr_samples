@@ -1,0 +1,8 @@
+# STM32G473 board configuration
+# Copyright (c) 2020 Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+config ACME_CPU_C201
+	bool "Acme CPU C201 Board"
+	depends on SOC_STM32G474XX
+	select BSP_ACME_CPU_C201_DRIVER

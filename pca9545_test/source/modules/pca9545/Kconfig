@@ -1,0 +1,24 @@
+# PCA9545 I2C Bus Multiplexer configuration options
+# Copyright (c) 2020 Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig I2C_MGM_PCA95XX
+	bool "PCA9545 I2C Bus Multiplexer"
+#	depends on I2C_DMA
+	depends on I2C
+	help
+	  Enable driver for PCA9545 I2C Bus Multiplexer.
+
+if I2C_MGM_PCA95XX
+
+module = I2C_MGM
+module-str = i2c_mgm
+source "subsys/logging/Kconfig.template.log_config"
+
+config I2C_MGM_PCA95XX_INIT_PRIORITY
+	int "Set the device driver initialization priority"
+	default APPLICATION_INIT_PRIORITY
+	help
+	    Sets up the device driver initialization priority
+
+endif # PCA9545

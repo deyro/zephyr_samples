@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2021 Acme CPU
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&i2c3_seg3 {
+
+  p121_ps_ext: bmp388@76 {
+    compatible = "bosch,bmp388";
+    reg = <0x76>;
+    label = "DIFF_PS_EXT_POSITIVE";
+  };
+
+  p122_ps_ext: bmp388@77 {
+    compatible = "bosch,bmp388";
+    reg = <0x77>;
+    label = "DIFF_PS_EXT_NEGATIVE";
+  };
+
+  p26_rtc: rv3028@52 {
+    compatible = "microcrystal,rv3028";
+    reg = <0x52>;
+    label = "LP_RTC";
+  };
+
+};

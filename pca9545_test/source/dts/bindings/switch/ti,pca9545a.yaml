@@ -1,0 +1,33 @@
+# Copyright (c) 2020, Volodymyr Sirous
+# SPDX-License-Identifier: Apache-2.0
+
+include: [i2c-device.yaml]
+
+compatible: "ti,pca9545a"
+
+description: PCA9545A I2C and SMBus Switch with Interrupt Logic and Reset Functions
+
+properties:
+
+  interrupts:
+    required: true
+
+  reset-gpios:
+    type: phandle-array
+    required: false
+    description: RESET pin. The RESET pin of PCA9545A is active low.
+
+  channel-number:
+    type: int
+    required: true
+    const: 4
+    description: Number of output I2C channels
+
+#  "#channel-cells":
+#    type: int
+#    required: true
+#    const: 1
+#    description: Number of items to expect in a I2C Bus Channel specifier
+
+#channel-cells:
+#    - channel

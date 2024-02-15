@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2020 Rohan Dey
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/pinctrl/stm32-pinctrl.h>
+
+&pinctrl {
+  spi1_sck: gpioa_5 {
+    /*pinmux = <STM32_PINMUX('A', 5, (STM32_PINMUX_ALT_FUNC_5 | STM32_PUSHPULL_NOPULL | STM32_OSPEEDR_VERY_HIGH_SPEED))>;*/
+    pinmux = <STM32_PINMUX('A', 5, AF5)>;
+  };
+
+  spi1_mosi: gpiob_5 {
+    /*pinmux = <STM32_PINMUX('B', 5, (STM32_PINMUX_ALT_FUNC_5 | STM32_PUSHPULL_NOPULL | STM32_OSPEEDR_VERY_HIGH_SPEED))>;*/
+    pinmux = <STM32_PINMUX('B', 5, AF5)>;
+  };
+
+  spi1_miso: gpioa_6 {
+    /*pinmux = <STM32_PINMUX('A', 6, (STM32_PINMUX_ALT_FUNC_5 | STM32_MODER_INPUT_MODE | STM32_PUPDR_PULL_UP))>;*/
+    pinmux = <STM32_PINMUX('A', 6, AF5)>;
+  };
+
+  spi1_microsd_nss: gpioa_4 {
+    /*pinmux = <STM32_PINMUX('A', 4, (STM32_PINMUX_FUNC_GPIO | STM32_PUSHPULL_PULLUP | STM32_OSPEEDR_VERY_HIGH_SPEED))>;*/
+    pinmux = <STM32_PINMUX('A', 4, AF5)>;
+  };
+};
+
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi1_sck &spi1_mosi &spi1_miso &spi1_microsd_nss>;
+
+};

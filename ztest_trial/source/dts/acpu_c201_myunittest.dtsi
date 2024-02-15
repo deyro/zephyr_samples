@@ -1,0 +1,9 @@
+
+&c201 {
+  myunittest {
+    compatible = "myunittest";
+    ut-gpios = <&gpioa 8 (GPIO_OUTPUT_ACTIVE)>;
+    label = "MY_UNIT_TEST";
+  };
+};
+
